@@ -78,3 +78,17 @@ s.save()
 # Delete temp files etc.
 openram.end_openram()
 openram.print_time("End", datetime.datetime.now(), start_time)
+
+# html output file
+html_output_file_path = "{0}{1}.{2}".format(
+    OPTS.output_path,
+    OPTS.output_name,
+    "html",
+)
+shell_cmd = "lynx -dump {0} > {1}".format(
+    html_output_file_path,
+    os.path.join(OPTS.output_path, "rendered_html.txt"),
+)
+
+print(shell_cmd)
+os.system(shell_cmd)

@@ -34,6 +34,9 @@ then
         conda install -q -y -c vlsida-eda ${tool}
     done
 
+    # Install lynx to render HTML reports
+    conda install conda-forge::lynx
+
     # Install required Python packages
     # (This step isn't required but used to prevent possible issues)
     python3 -m pip install -r requirements.txt --ignore-installed
